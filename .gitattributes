@@ -1,0 +1,6 @@
+# Keep Unix line endings on shell scripts even when committed from Windows.
+*.sh   text eol=lf
+# PowerShell stays CRLF.
+*.ps1  text eol=crlf
+# Default: let Git normalise text.
+*      text=auto

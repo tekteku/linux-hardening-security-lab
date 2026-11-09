@@ -1,0 +1,24 @@
+# Never publish real results or secrets.
+output/
+*.log
+*.pot
+*.hash
+*.shadow
+unshadowed*
+john.pot
+
+# Secrets
+.env
+
+# VM / ISO artefacts
+*.vmdk
+*.iso
+*.vmsn
+
+# AV test file (just in case)
+eicar*
+*.com
+
+# OS noise
+.DS_Store
+Thumbs.db
