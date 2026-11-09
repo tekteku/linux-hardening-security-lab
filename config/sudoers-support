@@ -1,0 +1,16 @@
+# Least-privilege sudo for the "support" role.
+# Installed to /etc/sudoers.d/support  (mode 0440, edited only via visudo -c check).
+#
+# The support group may restart a few services and read logs — nothing else.
+# This demonstrates least privilege: no full root, just the needed commands.
+
+# Allow these exact commands, no password prompt for the service restarts.
+Cmnd_Alias SUPPORT_SVC = /usr/bin/systemctl restart ssh, \
+                         /usr/bin/systemctl restart ssh.socket, \
+                         /usr/bin/systemctl status ssh, \
+                         /usr/bin/systemctl restart fail2ban
+
+Cmnd_Alias SUPPORT_LOG = /usr/bin/journalctl -u ssh, \
+                         /usr/bin/tail /var/log/auth.log
+
+%support ALL=(root) SUPPORT_SVC, SUPPORT_LOG
