@@ -107,5 +107,3 @@ _Screenshots are blurred and stored outside the repo._
 - AIDE, rkhunter and ClamAV **detect**; they do not **prevent**.
 - Tested on Ubuntu Server 24.04 LTS; other releases may differ.
 
-## License
-
